@@ -7,7 +7,7 @@ router.post('/create', async (req, res) => {
   try {
     const newComplaint = new Complaint(req.body);
     const savedComplaint = await newComplaint.save();
-    res.status(201).json(savedComplaint);
+    res.status(201).json({ message: 'Complaint created successfully', complaint: savedComplaint });
   } catch (error) {
     res.status(400).json({ message: error.message });
   }

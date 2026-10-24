@@ -5,12 +5,29 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  rollNumber: {
+  enrollmentNumber: {
     type: String,
     required: true,
     unique: true,
+    match: [/^\d{8}$/, 'Enrollment number must be exactly 8 digits'],
+  },
+  department: {
+    type: String,
+    required: true,
+  },
+  yearOfEntry: {
+    type: Number,
+    required: true,
+  },
+  bhawan: {
+    type: String,
+    required: true,
   },
   roomNumber: {
+    type: String,
+    required: true,
+  },
+  password: {
     type: String,
     required: true,
   },
